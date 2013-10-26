@@ -165,7 +165,11 @@
             NSAssert((image != nil), @"Couldn't load image");
             
             // draw image
-            CGRect cropRect = CGRectMake(floor(xPos/images.count), 0, stripeWidth, size.height);
+            CGFloat relativePosition = xPos/size.width;
+            NSInteger relativeImagePosition = (image.size.width * relativePosition);
+            relativeImagePosition = MAX(0, round(relativeImagePosition - stripeWidth/2.0));
+            relativeImagePosition = MIN(image.size.width-stripeWidth, relativeImagePosition);
+            CGRect cropRect = CGRectMake(relativeImagePosition, 0, stripeWidth, size.height);
             CGImageRef croppedImage = CGImageCreateWithImageInRect(image.CGImage, cropRect);
             [[UIImage imageWithCGImage:croppedImage] drawAtPoint:CGPointMake(xPos, 0)];
             
