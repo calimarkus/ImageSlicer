@@ -15,6 +15,7 @@
 @property (nonatomic,strong) UIStepper *stripeWidthStepper;
 @property (nonatomic,strong) UITextField *patternTextField;
 @property (nonatomic,strong) UIImageView *imageView;
+@property (nonatomic,strong) UILabel *stepperValueLabel;
 
 @property (nonatomic, assign) NSInteger stripeWidth;
 @property (nonatomic, copy) NSArray *pattern;
@@ -46,14 +47,23 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     // add stepper
-    self.stripeWidthStepper = [[UIStepper alloc] initWithFrame:CGRectMake(40, 100, 0, 0)];
+    self.stripeWidthStepper = [[UIStepper alloc] initWithFrame:CGRectMake(20, 100, 0, 0)];
     self.stripeWidthStepper.minimumValue = 1;
     self.stripeWidthStepper.maximumValue = 100;
+    self.stripeWidthStepper.stepValue = 10;
     self.stripeWidthStepper.value = self.stripeWidth;
     [self.stripeWidthStepper addTarget:self
                                 action:@selector(stepperValueChanged:)
                       forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:self.stripeWidthStepper];
+    
+    // add stepper label
+    CGSize stepperSize = self.stripeWidthStepper.frame.size;
+    self.stepperValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(40+stepperSize.width, 100,
+                                                                       self.view.frame.size.width-80-stepperSize.width,
+                                                                       stepperSize.height)];
+    [self.view addSubview:self.stepperValueLabel];
+    [self stepperValueChanged:self.stripeWidthStepper];
     
     // add image view
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - self.view.frame.size.width,
@@ -77,6 +87,7 @@
 - (void)stepperValueChanged:(UIStepper*)sender;
 {
     self.stripeWidth = sender.value;
+    self.stepperValueLabel.text = [NSString stringWithFormat: @"%d pixel per stripe", self.stripeWidth];
 }
 
 - (void)startAction:(UIBarButtonItem*)sender;
