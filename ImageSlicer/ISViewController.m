@@ -122,9 +122,9 @@
         UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
         CGContextRef ctx = UIGraphicsGetCurrentContext();
         
-        NSInteger xpos = 0;
+        NSInteger xPos = 0;
         NSInteger patternIndex = 0;
-        while (xpos < size.width) {
+        while (xPos < size.width) {
             // find imageIndex from pattern
             NSInteger imageIndex = [pattern[patternIndex] intValue];
             NSAssert((imageIndex < images.count), @"Invalid pattern or too few images.");
@@ -134,18 +134,18 @@
             NSAssert((image != nil), @"Couldn't load image");
             
             // draw image
-            CGRect cropRect = CGRectMake(image.size.width - floor(xpos/images.count) - stripeWidth, 0, stripeWidth, size.height);
+            CGRect cropRect = CGRectMake(image.size.width - floor(xPos/images.count) - stripeWidth, 0, stripeWidth, size.height);
             CGImageRef croppedImage = CGImageCreateWithImageInRect(image.CGImage, cropRect);
-            CGContextDrawImage(ctx, CGRectMake(xpos, 0, stripeWidth, size.height), croppedImage);
+            CGContextDrawImage(ctx, CGRectMake(xPos, 0, stripeWidth, size.height), croppedImage);
             
             // increment
             patternIndex = (patternIndex+1) % pattern.count;
-            xpos += stripeWidth;
+            xPos += stripeWidth;
             
             // call progress block
             if (progress != nil) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    progress(xpos/size.width);
+                    progress(xPos/size.width);
                 });
             }
         }
