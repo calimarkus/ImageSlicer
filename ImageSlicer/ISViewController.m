@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 nxtbgthng. All rights reserved.
 //
 
+#import "NSFileManager+DesktopPath.h"
+
 #import "ISViewController.h"
 
 @interface ISViewController ()
@@ -18,12 +20,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSArray *images = @[[UIImage imageNamed:@"01"],
+                        [UIImage imageNamed:@"02"],
+                        [UIImage imageNamed:@"03"],
+                        [UIImage imageNamed:@"04"]];
+    UIImage *image = [self imageFromSourceImages:images];
 }
 
-- (void)didReceiveMemoryWarning
+- (UIImage*)imageFromSourceImages:(NSArray*)images;
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 @end

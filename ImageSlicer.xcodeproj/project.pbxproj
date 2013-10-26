@@ -13,8 +13,6 @@
 		D2F1FBB5181BDFD100CF0398 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBB3181BDFD100CF0398 /* InfoPlist.strings */; };
 		D2F1FBB7181BDFD100CF0398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1FBB6181BDFD100CF0398 /* main.m */; };
 		D2F1FBBB181BDFD100CF0398 /* ISAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1FBBA181BDFD100CF0398 /* ISAppDelegate.m */; };
-		D2F1FBBE181BDFD100CF0398 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBBC181BDFD100CF0398 /* Main_iPhone.storyboard */; };
-		D2F1FBC1181BDFD100CF0398 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBBF181BDFD100CF0398 /* Main_iPad.storyboard */; };
 		D2F1FBC4181BDFD100CF0398 /* ISViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1FBC3181BDFD100CF0398 /* ISViewController.m */; };
 		D2F1FBC6181BDFD100CF0398 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBC5181BDFD100CF0398 /* Images.xcassets */; };
 		D2F1FBCD181BDFD100CF0398 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1FBCC181BDFD100CF0398 /* XCTest.framework */; };
@@ -22,6 +20,11 @@
 		D2F1FBCF181BDFD100CF0398 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1FBAE181BDFD100CF0398 /* UIKit.framework */; };
 		D2F1FBD7181BDFD100CF0398 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBD5181BDFD100CF0398 /* InfoPlist.strings */; };
 		D2F1FBD9181BDFD100CF0398 /* ImageSlicerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1FBD8181BDFD100CF0398 /* ImageSlicerTests.m */; };
+		D2F1FBE7181BE06600CF0398 /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBE3181BE06600CF0398 /* 01.jpg */; };
+		D2F1FBE8181BE06600CF0398 /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBE4181BE06600CF0398 /* 02.jpg */; };
+		D2F1FBE9181BE06600CF0398 /* 03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBE5181BE06600CF0398 /* 03.jpg */; };
+		D2F1FBEA181BE06600CF0398 /* 04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBE6181BE06600CF0398 /* 04.jpg */; };
+		D2F1FBED181BE4CF00CF0398 /* NSFileManager+DesktopPath.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1FBEC181BE4CF00CF0398 /* NSFileManager+DesktopPath.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +48,6 @@
 		D2F1FBB8181BDFD100CF0398 /* ImageSlicer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageSlicer-Prefix.pch"; sourceTree = "<group>"; };
 		D2F1FBB9181BDFD100CF0398 /* ISAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISAppDelegate.h; sourceTree = "<group>"; };
 		D2F1FBBA181BDFD100CF0398 /* ISAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISAppDelegate.m; sourceTree = "<group>"; };
-		D2F1FBBD181BDFD100CF0398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		D2F1FBC0181BDFD100CF0398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		D2F1FBC2181BDFD100CF0398 /* ISViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISViewController.h; sourceTree = "<group>"; };
 		D2F1FBC3181BDFD100CF0398 /* ISViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISViewController.m; sourceTree = "<group>"; };
 		D2F1FBC5181BDFD100CF0398 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -55,6 +56,12 @@
 		D2F1FBD4181BDFD100CF0398 /* ImageSlicerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageSlicerTests-Info.plist"; sourceTree = "<group>"; };
 		D2F1FBD6181BDFD100CF0398 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D2F1FBD8181BDFD100CF0398 /* ImageSlicerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageSlicerTests.m; sourceTree = "<group>"; };
+		D2F1FBE3181BE06600CF0398 /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
+		D2F1FBE4181BE06600CF0398 /* 02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpg; sourceTree = "<group>"; };
+		D2F1FBE5181BE06600CF0398 /* 03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03.jpg; sourceTree = "<group>"; };
+		D2F1FBE6181BE06600CF0398 /* 04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 04.jpg; sourceTree = "<group>"; };
+		D2F1FBEB181BE4CF00CF0398 /* NSFileManager+DesktopPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+DesktopPath.h"; sourceTree = "<group>"; };
+		D2F1FBEC181BE4CF00CF0398 /* NSFileManager+DesktopPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+DesktopPath.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +123,11 @@
 			children = (
 				D2F1FBB9181BDFD100CF0398 /* ISAppDelegate.h */,
 				D2F1FBBA181BDFD100CF0398 /* ISAppDelegate.m */,
-				D2F1FBBC181BDFD100CF0398 /* Main_iPhone.storyboard */,
-				D2F1FBBF181BDFD100CF0398 /* Main_iPad.storyboard */,
 				D2F1FBC2181BDFD100CF0398 /* ISViewController.h */,
 				D2F1FBC3181BDFD100CF0398 /* ISViewController.m */,
+				D2F1FBEB181BE4CF00CF0398 /* NSFileManager+DesktopPath.h */,
+				D2F1FBEC181BE4CF00CF0398 /* NSFileManager+DesktopPath.m */,
+				D2F1FBE2181BE06600CF0398 /* Images */,
 				D2F1FBC5181BDFD100CF0398 /* Images.xcassets */,
 				D2F1FBB1181BDFD100CF0398 /* Supporting Files */,
 			);
@@ -153,6 +161,17 @@
 				D2F1FBD5181BDFD100CF0398 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2F1FBE2181BE06600CF0398 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D2F1FBE3181BE06600CF0398 /* 01.jpg */,
+				D2F1FBE4181BE06600CF0398 /* 02.jpg */,
+				D2F1FBE5181BE06600CF0398 /* 03.jpg */,
+				D2F1FBE6181BE06600CF0398 /* 04.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,10 +251,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2F1FBC1181BDFD100CF0398 /* Main_iPad.storyboard in Resources */,
+				D2F1FBE9181BE06600CF0398 /* 03.jpg in Resources */,
 				D2F1FBC6181BDFD100CF0398 /* Images.xcassets in Resources */,
-				D2F1FBBE181BDFD100CF0398 /* Main_iPhone.storyboard in Resources */,
 				D2F1FBB5181BDFD100CF0398 /* InfoPlist.strings in Resources */,
+				D2F1FBE7181BE06600CF0398 /* 01.jpg in Resources */,
+				D2F1FBE8181BE06600CF0398 /* 02.jpg in Resources */,
+				D2F1FBEA181BE06600CF0398 /* 04.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F1FBED181BE4CF00CF0398 /* NSFileManager+DesktopPath.m in Sources */,
 				D2F1FBBB181BDFD100CF0398 /* ISAppDelegate.m in Sources */,
 				D2F1FBB7181BDFD100CF0398 /* main.m in Sources */,
 				D2F1FBC4181BDFD100CF0398 /* ISViewController.m in Sources */,
@@ -285,22 +307,6 @@
 				D2F1FBB4181BDFD100CF0398 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D2F1FBBC181BDFD100CF0398 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2F1FBBD181BDFD100CF0398 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		D2F1FBBF181BDFD100CF0398 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2F1FBC0181BDFD100CF0398 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		D2F1FBD5181BDFD100CF0398 /* InfoPlist.strings */ = {
