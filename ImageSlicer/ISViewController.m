@@ -53,6 +53,9 @@
     self.progressView.frame = frame;
     self.progressView.hidden = YES;
     [self.imageView addSubview:self.progressView];
+    
+    // autostart
+    [self startAction:self.navigationItem.rightBarButtonItem];
 }
 
 - (void)startAction:(UIBarButtonItem*)sender;
@@ -67,6 +70,7 @@
     
     // show progress
     self.progressView.hidden = NO;
+    self.imageView.image = nil;
     
     // create new image & save
     __weak typeof(self) blockSelf = self;
@@ -116,11 +120,11 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         // draw image stripes
         UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+        CGContextRef ctx = UIGraphicsGetCurrentContext();
         
         NSInteger xpos = 0;
         NSInteger patternIndex = 0;
         while (xpos < size.width) {
-            
             // find imageIndex from pattern
             NSInteger imageIndex = [pattern[patternIndex] intValue];
             NSAssert((imageIndex < images.count), @"Invalid pattern or too few images.");
@@ -130,7 +134,9 @@
             NSAssert((image != nil), @"Couldn't load image");
             
             // draw image
-            [image drawAtPoint:CGPointMake(xpos,0)];
+            CGRect cropRect = CGRectMake(image.size.width - floor(xpos/images.count) - stripeWidth, 0, stripeWidth, size.height);
+            CGImageRef croppedImage = CGImageCreateWithImageInRect(image.CGImage, cropRect);
+            CGContextDrawImage(ctx, CGRectMake(xpos, 0, stripeWidth, size.height), croppedImage);
             
             // increment
             patternIndex = (patternIndex+1) % pattern.count;
