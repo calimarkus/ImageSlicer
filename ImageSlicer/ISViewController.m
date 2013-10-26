@@ -116,7 +116,7 @@
                      completion:^(UIImage *resultImage){
                          // save image
                          if(resultImage) {
-                             NSString *path = [[NSFileManager defaultManager] desktopPathForDirectory:@"ImageSlicer-Results"];
+                             NSString *path = [[NSFileManager defaultManager] desktopPathForDirectory:nil];
                              path = [path stringByAppendingPathComponent:@"SlicedImage.jpg"];
                              NSData *imageData = UIImageJPEGRepresentation(resultImage, 0.8);
                              [imageData writeToFile:path atomically:YES];
