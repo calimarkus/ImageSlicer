@@ -11,16 +11,41 @@
 #import "ISViewController.h"
 
 @interface ISViewController ()
-
+@property (nonatomic,strong) UIProgressView *progressView;
 @end
 
 @implementation ISViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = @"ImageSlicer";
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Start"
+                                                                                  style:UIBarButtonItemStylePlain
+                                                                                 target:self
+                                                                                 action:@selector(startAction:)];
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    CGRect frame = CGRectInset(self.view.bounds, 40, 40);
+    frame.origin.y = 100.0;
+    self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    self.progressView.frame = frame;
+    [self.view addSubview:self.progressView];
+}
+
+- (void)startAction:(UIBarButtonItem*)sender;
+{
+    sender.enabled = NO;
     
     // get source images
     NSArray *images = @[[UIImage imageNamed:@"01.jpg"],
@@ -29,12 +54,13 @@
                         [UIImage imageNamed:@"04.jpg"]];
     
     // create new image & save
+    __weak typeof(self) blockSelf = self;
     [self imageFromSourceImages:images
                     stripeWidth:3
                         pattern:@[@(0),@(1),@(2),@(1),@(0),@(3)]
                        progress:^(CGFloat progress){
                            // handle progress
-                           NSLog(@"%f", progress);
+                           blockSelf.progressView.progress = progress;
                        }
                      completion:^(UIImage *resultImage){
                          // save image
