@@ -12,6 +12,9 @@
 
 @interface ISViewController ()
 @property (nonatomic,strong) UIProgressView *progressView;
+@property (nonatomic,strong) UIStepper *stripeWidthStepper;
+@property (nonatomic,strong) UITextField *patternTextField;
+@property (nonatomic,strong) UIImageView *imageView;
 @end
 
 @implementation ISViewController
@@ -36,11 +39,20 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    CGRect frame = CGRectInset(self.view.bounds, 40, 40);
-    frame.origin.y = 100.0;
+    // add image view
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - self.view.frame.size.width,
+                                                                           self.view.frame.size.width, self.view.frame.size.width)];
+    self.imageView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:self.imageView];
+    
+    // add progress view
+    CGRect frame = CGRectInset(self.imageView.frame, 40, 40);
+    frame.origin.y = floor(self.imageView.frame.size.height/2.0);
     self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     self.progressView.frame = frame;
-    [self.view addSubview:self.progressView];
+    self.progressView.hidden = YES;
+    [self.imageView addSubview:self.progressView];
 }
 
 - (void)startAction:(UIBarButtonItem*)sender;
@@ -52,6 +64,9 @@
                         [UIImage imageNamed:@"02.jpg"],
                         [UIImage imageNamed:@"03.jpg"],
                         [UIImage imageNamed:@"04.jpg"]];
+    
+    // show progress
+    self.progressView.hidden = NO;
     
     // create new image & save
     __weak typeof(self) blockSelf = self;
@@ -69,7 +84,12 @@
                              path = [path stringByAppendingPathComponent:@"SlicedImage.jpg"];
                              NSData *imageData = UIImageJPEGRepresentation(resultImage, 0.8);
                              [imageData writeToFile:path atomically:YES];
+                             
+                             blockSelf.imageView.image = resultImage;
+                             blockSelf.progressView.hidden = YES;
                          }
+                         
+                         blockSelf.navigationItem.rightBarButtonItem.enabled = YES;
                      }];
 }
 
