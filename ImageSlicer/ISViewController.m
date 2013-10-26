@@ -15,6 +15,9 @@
 @property (nonatomic,strong) UIStepper *stripeWidthStepper;
 @property (nonatomic,strong) UITextField *patternTextField;
 @property (nonatomic,strong) UIImageView *imageView;
+
+@property (nonatomic, assign) NSInteger stripeWidth;
+@property (nonatomic, copy) NSArray *pattern;
 @end
 
 @implementation ISViewController
@@ -24,6 +27,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"ImageSlicer";
+        
+        self.stripeWidth = 3;
+        self.pattern = @[@(0),@(1),@(2),@(1),@(0),@(3)];
         
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Start"
                                                                                   style:UIBarButtonItemStylePlain
@@ -38,6 +44,16 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    // add stepper
+    self.stripeWidthStepper = [[UIStepper alloc] initWithFrame:CGRectMake(40, 100, 0, 0)];
+    self.stripeWidthStepper.minimumValue = 1;
+    self.stripeWidthStepper.maximumValue = 100;
+    self.stripeWidthStepper.value = self.stripeWidth;
+    [self.stripeWidthStepper addTarget:self
+                                action:@selector(stepperValueChanged:)
+                      forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:self.stripeWidthStepper];
     
     // add image view
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - self.view.frame.size.width,
@@ -58,6 +74,11 @@
     [self startAction:self.navigationItem.rightBarButtonItem];
 }
 
+- (void)stepperValueChanged:(UIStepper*)sender;
+{
+    self.stripeWidth = sender.value;
+}
+
 - (void)startAction:(UIBarButtonItem*)sender;
 {
     sender.enabled = NO;
@@ -75,8 +96,8 @@
     // create new image & save
     __weak typeof(self) blockSelf = self;
     [self imageFromSourceImages:images
-                    stripeWidth:3
-                        pattern:@[@(0),@(1),@(2),@(1),@(0),@(3)]
+                    stripeWidth:self.stripeWidth
+                        pattern:self.pattern
                        progress:^(CGFloat progress){
                            // handle progress
                            blockSelf.progressView.progress = progress;
