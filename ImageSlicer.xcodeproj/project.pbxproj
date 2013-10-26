@@ -15,27 +15,12 @@
 		D2F1FBBB181BDFD100CF0398 /* ISAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1FBBA181BDFD100CF0398 /* ISAppDelegate.m */; };
 		D2F1FBC4181BDFD100CF0398 /* ISViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1FBC3181BDFD100CF0398 /* ISViewController.m */; };
 		D2F1FBC6181BDFD100CF0398 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBC5181BDFD100CF0398 /* Images.xcassets */; };
-		D2F1FBCD181BDFD100CF0398 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1FBCC181BDFD100CF0398 /* XCTest.framework */; };
-		D2F1FBCE181BDFD100CF0398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1FBAA181BDFD100CF0398 /* Foundation.framework */; };
-		D2F1FBCF181BDFD100CF0398 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1FBAE181BDFD100CF0398 /* UIKit.framework */; };
-		D2F1FBD7181BDFD100CF0398 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBD5181BDFD100CF0398 /* InfoPlist.strings */; };
-		D2F1FBD9181BDFD100CF0398 /* ImageSlicerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1FBD8181BDFD100CF0398 /* ImageSlicerTests.m */; };
 		D2F1FBE7181BE06600CF0398 /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBE3181BE06600CF0398 /* 01.jpg */; };
 		D2F1FBE8181BE06600CF0398 /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBE4181BE06600CF0398 /* 02.jpg */; };
 		D2F1FBE9181BE06600CF0398 /* 03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBE5181BE06600CF0398 /* 03.jpg */; };
 		D2F1FBEA181BE06600CF0398 /* 04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2F1FBE6181BE06600CF0398 /* 04.jpg */; };
 		D2F1FBED181BE4CF00CF0398 /* NSFileManager+DesktopPath.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1FBEC181BE4CF00CF0398 /* NSFileManager+DesktopPath.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D2F1FBD0181BDFD100CF0398 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D2F1FB9F181BDFD100CF0398 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D2F1FBA6181BDFD100CF0398;
-			remoteInfo = ImageSlicer;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D2F1FBA7181BDFD100CF0398 /* ImageSlicer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageSlicer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,11 +36,7 @@
 		D2F1FBC2181BDFD100CF0398 /* ISViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISViewController.h; sourceTree = "<group>"; };
 		D2F1FBC3181BDFD100CF0398 /* ISViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISViewController.m; sourceTree = "<group>"; };
 		D2F1FBC5181BDFD100CF0398 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D2F1FBCB181BDFD100CF0398 /* ImageSlicerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageSlicerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F1FBCC181BDFD100CF0398 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D2F1FBD4181BDFD100CF0398 /* ImageSlicerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageSlicerTests-Info.plist"; sourceTree = "<group>"; };
-		D2F1FBD6181BDFD100CF0398 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D2F1FBD8181BDFD100CF0398 /* ImageSlicerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageSlicerTests.m; sourceTree = "<group>"; };
 		D2F1FBE3181BE06600CF0398 /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
 		D2F1FBE4181BE06600CF0398 /* 02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpg; sourceTree = "<group>"; };
 		D2F1FBE5181BE06600CF0398 /* 03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03.jpg; sourceTree = "<group>"; };
@@ -75,16 +56,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2F1FBC8181BDFD100CF0398 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D2F1FBCD181BDFD100CF0398 /* XCTest.framework in Frameworks */,
-				D2F1FBCF181BDFD100CF0398 /* UIKit.framework in Frameworks */,
-				D2F1FBCE181BDFD100CF0398 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -92,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				D2F1FBB0181BDFD100CF0398 /* ImageSlicer */,
-				D2F1FBD2181BDFD100CF0398 /* ImageSlicerTests */,
 				D2F1FBA9181BDFD100CF0398 /* Frameworks */,
 				D2F1FBA8181BDFD100CF0398 /* Products */,
 			);
@@ -102,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				D2F1FBA7181BDFD100CF0398 /* ImageSlicer.app */,
-				D2F1FBCB181BDFD100CF0398 /* ImageSlicerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,24 +114,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D2F1FBD2181BDFD100CF0398 /* ImageSlicerTests */ = {
-			isa = PBXGroup;
-			children = (
-				D2F1FBD8181BDFD100CF0398 /* ImageSlicerTests.m */,
-				D2F1FBD3181BDFD100CF0398 /* Supporting Files */,
-			);
-			path = ImageSlicerTests;
-			sourceTree = "<group>";
-		};
-		D2F1FBD3181BDFD100CF0398 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D2F1FBD4181BDFD100CF0398 /* ImageSlicerTests-Info.plist */,
-				D2F1FBD5181BDFD100CF0398 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		D2F1FBE2181BE06600CF0398 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,24 +145,6 @@
 			productReference = D2F1FBA7181BDFD100CF0398 /* ImageSlicer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D2F1FBCA181BDFD100CF0398 /* ImageSlicerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D2F1FBDF181BDFD100CF0398 /* Build configuration list for PBXNativeTarget "ImageSlicerTests" */;
-			buildPhases = (
-				D2F1FBC7181BDFD100CF0398 /* Sources */,
-				D2F1FBC8181BDFD100CF0398 /* Frameworks */,
-				D2F1FBC9181BDFD100CF0398 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D2F1FBD1181BDFD100CF0398 /* PBXTargetDependency */,
-			);
-			name = ImageSlicerTests;
-			productName = ImageSlicerTests;
-			productReference = D2F1FBCB181BDFD100CF0398 /* ImageSlicerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -221,11 +154,6 @@
 				CLASSPREFIX = IS;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = nxtbgthng;
-				TargetAttributes = {
-					D2F1FBCA181BDFD100CF0398 = {
-						TestTargetID = D2F1FBA6181BDFD100CF0398;
-					};
-				};
 			};
 			buildConfigurationList = D2F1FBA2181BDFD100CF0398 /* Build configuration list for PBXProject "ImageSlicer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -241,7 +169,6 @@
 			projectRoot = "";
 			targets = (
 				D2F1FBA6181BDFD100CF0398 /* ImageSlicer */,
-				D2F1FBCA181BDFD100CF0398 /* ImageSlicerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -260,14 +187,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2F1FBC9181BDFD100CF0398 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D2F1FBD7181BDFD100CF0398 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -282,37 +201,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2F1FBC7181BDFD100CF0398 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D2F1FBD9181BDFD100CF0398 /* ImageSlicerTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D2F1FBD1181BDFD100CF0398 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D2F1FBA6181BDFD100CF0398 /* ImageSlicer */;
-			targetProxy = D2F1FBD0181BDFD100CF0398 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D2F1FBB3181BDFD100CF0398 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D2F1FBB4181BDFD100CF0398 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D2F1FBD5181BDFD100CF0398 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2F1FBD6181BDFD100CF0398 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -420,48 +315,6 @@
 			};
 			name = Release;
 		};
-		D2F1FBE0181BDFD100CF0398 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ImageSlicer.app/ImageSlicer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ImageSlicer/ImageSlicer-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ImageSlicerTests/ImageSlicerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		D2F1FBE1181BDFD100CF0398 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ImageSlicer.app/ImageSlicer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ImageSlicer/ImageSlicer-Prefix.pch";
-				INFOPLIST_FILE = "ImageSlicerTests/ImageSlicerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -481,14 +334,7 @@
 				D2F1FBDE181BDFD100CF0398 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		D2F1FBDF181BDFD100CF0398 /* Build configuration list for PBXNativeTarget "ImageSlicerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D2F1FBE0181BDFD100CF0398 /* Debug */,
-				D2F1FBE1181BDFD100CF0398 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
