@@ -152,7 +152,6 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         // draw image stripes
         UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
-        CGContextRef ctx = UIGraphicsGetCurrentContext();
         
         NSInteger xPos = 0;
         NSInteger patternIndex = 0;
@@ -166,9 +165,9 @@
             NSAssert((image != nil), @"Couldn't load image");
             
             // draw image
-            CGRect cropRect = CGRectMake(image.size.width - floor(xPos/images.count) - stripeWidth, 0, stripeWidth, size.height);
+            CGRect cropRect = CGRectMake(floor(xPos/images.count), 0, stripeWidth, size.height);
             CGImageRef croppedImage = CGImageCreateWithImageInRect(image.CGImage, cropRect);
-            CGContextDrawImage(ctx, CGRectMake(xPos, 0, stripeWidth, size.height), croppedImage);
+            [[UIImage imageWithCGImage:croppedImage] drawAtPoint:CGPointMake(xPos, 0)];
             
             // increment
             patternIndex = (patternIndex+1) % pattern.count;
