@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D27E85ED18AB8C6300DCD31A /* ISImageSlicer.m in Sources */ = {isa = PBXBuildFile; fileRef = D27E85EC18AB8C6300DCD31A /* ISImageSlicer.m */; };
 		D2F1FBAB181BDFD100CF0398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1FBAA181BDFD100CF0398 /* Foundation.framework */; };
 		D2F1FBAD181BDFD100CF0398 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1FBAC181BDFD100CF0398 /* CoreGraphics.framework */; };
 		D2F1FBAF181BDFD100CF0398 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1FBAE181BDFD100CF0398 /* UIKit.framework */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D27E85EB18AB8C6300DCD31A /* ISImageSlicer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISImageSlicer.h; sourceTree = "<group>"; };
+		D27E85EC18AB8C6300DCD31A /* ISImageSlicer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISImageSlicer.m; sourceTree = "<group>"; };
 		D2F1FBA7181BDFD100CF0398 /* ImageSlicer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageSlicer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F1FBAA181BDFD100CF0398 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2F1FBAC181BDFD100CF0398 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -94,6 +97,8 @@
 				D2F1FBBA181BDFD100CF0398 /* ISAppDelegate.m */,
 				D2F1FBC2181BDFD100CF0398 /* ISViewController.h */,
 				D2F1FBC3181BDFD100CF0398 /* ISViewController.m */,
+				D27E85EB18AB8C6300DCD31A /* ISImageSlicer.h */,
+				D27E85EC18AB8C6300DCD31A /* ISImageSlicer.m */,
 				D2F1FBEB181BE4CF00CF0398 /* NSFileManager+DesktopPath.h */,
 				D2F1FBEC181BE4CF00CF0398 /* NSFileManager+DesktopPath.m */,
 				D2F1FBE2181BE06600CF0398 /* Images */,
@@ -194,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D27E85ED18AB8C6300DCD31A /* ISImageSlicer.m in Sources */,
 				D2F1FBED181BE4CF00CF0398 /* NSFileManager+DesktopPath.m in Sources */,
 				D2F1FBBB181BDFD100CF0398 /* ISAppDelegate.m in Sources */,
 				D2F1FBB7181BDFD100CF0398 /* main.m in Sources */,
