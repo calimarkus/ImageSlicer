@@ -32,14 +32,6 @@
         self.imageSlicer = [[ISImageSlicer alloc] init];
         self.imageSlicer.stripeWidth = 3;
         self.imageSlicer.pattern = @[@(0),@(1),@(2),@(1),@(0),@(3)];
-        
-        self.navigationItem.rightBarButtonItem = ({
-            [[UIBarButtonItem alloc]
-             initWithTitle:@"Start"
-             style:UIBarButtonItemStylePlain
-             target:self
-             action:@selector(startAction:)];
-        });
     }
     return self;
 }
@@ -88,7 +80,7 @@
     [self.imageView addSubview:self.progressView];
     
     // autostart
-    [self startAction:self.navigationItem.rightBarButtonItem];
+    [self redrawImage];
 }
 
 - (void)sliderValueChanged:(UISlider*)sender;
@@ -99,7 +91,7 @@
 
 - (void)sliderEndedEditing:(UISlider*)slider;
 {
-    [self startAction:self.navigationItem.rightBarButtonItem];
+    [self redrawImage];
 }
 
 - (void)tappedImage:(UITapGestureRecognizer*)recognizer;
@@ -111,10 +103,8 @@
     }
 }
 
-- (void)startAction:(UIBarButtonItem*)sender;
+- (void)redrawImage;
 {
-    sender.enabled = NO;
-    
     // get source images
     NSArray *images = @[[UIImage imageNamed:@"01.jpg"],
                         [UIImage imageNamed:@"02.jpg"],
@@ -141,8 +131,6 @@
             blockSelf.imageView.image = resultImage;
             blockSelf.progressView.hidden = YES;
         }
-        
-        blockSelf.navigationItem.rightBarButtonItem.enabled = YES;
     }];
 }
 
