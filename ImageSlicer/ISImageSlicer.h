@@ -10,7 +10,7 @@
 
 @interface ISImageSlicer : NSObject
 
-@property (nonatomic, assign) NSUInteger stripeWidth;
+@property (nonatomic, assign) NSInteger stripeWidth;
 @property (nonatomic, copy) NSArray *pattern;
 
 - (void)imageFromSourceImages:(NSArray*)sourceImages

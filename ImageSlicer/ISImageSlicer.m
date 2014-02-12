@@ -17,7 +17,7 @@
     // basic validity checks
     NSAssert(sourceImages.count > 1, @"No sourceImages given.");
     NSAssert(self.pattern.count > 1, @"pattern needs to have two elements at least.");
-    NSAssert(self.stripeWidth > 0, @"stripeWidth cannot be 0.");
+    NSAssert(self.stripeWidth > 0, @"stripeWidth cannot be less than 1.");
     
     // get size of big image
     UIImage *firstImage = sourceImages[0];
@@ -34,11 +34,11 @@
         while (xPos < size.width) {
             // find imageIndex from pattern
             NSInteger imageIndex = [self.pattern[patternIndex] intValue];
-            NSAssert((imageIndex < sourceImages.count), @"Invalid pattern (%@) or too few images (%d).", self.pattern, sourceImages.count);
+            NSAssert((imageIndex < sourceImages.count), @"Invalid pattern (%@) or too few images (%d).", self.pattern, (int)sourceImages.count);
             
             // use correct images
             UIImage *image = sourceImages[imageIndex];
-            NSAssert((image != nil), @"Couldn't load image for index %d", imageIndex);
+            NSAssert((image != nil), @"Couldn't load image for index %d", (int)imageIndex);
             
             // draw image
             CGFloat relativePosition = xPos/size.width;

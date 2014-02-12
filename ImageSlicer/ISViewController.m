@@ -51,7 +51,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     // add stepper
-    self.stripeWidthSlider = [[UISlider alloc] initWithFrame:CGRectMake(20, 100, 280, 30)];
+    self.stripeWidthSlider = [[UISlider alloc] initWithFrame:CGRectMake(20, 100, self.view.frame.size.width-40, 30)];
+    self.stripeWidthSlider.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
     self.stripeWidthSlider.minimumValue = 1;
     self.stripeWidthSlider.maximumValue = 100;
     self.stripeWidthSlider.value = self.imageSlicer.stripeWidth;
@@ -62,16 +63,20 @@
     [self.view addSubview:self.stripeWidthSlider];
     
     // add stepper label
-    self.stepperValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 140, 280, 30)];
+    self.stepperValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 140, self.view.frame.size.width-40, 30)];
+    self.stepperValueLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
     self.stepperValueLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.stepperValueLabel];
     [self sliderValueChanged:self.stripeWidthSlider];
     
     // add image view
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - self.view.frame.size.width,
-                                                                           self.view.frame.size.width, self.view.frame.size.width)];
+                                                                   self.view.frame.size.width, self.view.frame.size.width)];
+    self.imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin;
     self.imageView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.imageView.userInteractionEnabled = YES;
+    [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedImage:)]];
     [self.view addSubview:self.imageView];
     
     // add progress view
@@ -89,12 +94,21 @@
 - (void)sliderValueChanged:(UISlider*)sender;
 {
     self.imageSlicer.stripeWidth = sender.value;
-    self.stepperValueLabel.text = [NSString stringWithFormat: @"%d pixel per stripe", self.imageSlicer.stripeWidth];
+    self.stepperValueLabel.text = [NSString stringWithFormat: @"%d pixel per stripe", (int)self.imageSlicer.stripeWidth];
 }
 
 - (void)sliderEndedEditing:(UISlider*)slider;
 {
     [self startAction:self.navigationItem.rightBarButtonItem];
+}
+
+- (void)tappedImage:(UITapGestureRecognizer*)recognizer;
+{
+    if(self.imageView.contentMode == UIViewContentModeScaleAspectFill) {
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    } else {
+        self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    }
 }
 
 - (void)startAction:(UIBarButtonItem*)sender;
