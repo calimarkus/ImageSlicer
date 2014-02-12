@@ -75,6 +75,7 @@
     CGRect frame = CGRectInset(self.imageView.frame, 40, 40);
     frame.origin.y = floor(self.imageView.frame.size.height/2.0);
     self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    self.progressView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     self.progressView.frame = frame;
     self.progressView.hidden = YES;
     [self.imageView addSubview:self.progressView];
