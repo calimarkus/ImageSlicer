@@ -7,7 +7,7 @@
 //
 
 #import "ISImageSlicer.h"
-#import "NSFileManager+DesktopPath.h"
+#import "ISSaveImageToDesktopActivity.h"
 
 #import "ISViewController.h"
 
@@ -32,6 +32,9 @@
         self.imageSlicer = [[ISImageSlicer alloc] init];
         self.imageSlicer.stripeWidth = 3;
         self.imageSlicer.pattern = @[@(0),@(1),@(2),@(1),@(0),@(3)];
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                                               target:self action:@selector(share:)];
     }
     return self;
 }
@@ -84,6 +87,8 @@
     [self redrawImage];
 }
 
+#pragma mark image logic
+
 - (void)sliderValueChanged:(UISlider*)sender;
 {
     self.imageSlicer.stripeWidth = sender.value;
@@ -124,15 +129,30 @@
     } completion:^(UIImage *resultImage){
         // save image
         if(resultImage) {
-            NSString *path = [[NSFileManager defaultManager] desktopPathForDirectory:nil];
-            path = [path stringByAppendingPathComponent:@"SlicedImage.jpg"];
-            NSData *imageData = UIImageJPEGRepresentation(resultImage, 0.8);
-            [imageData writeToFile:path atomically:YES];
-            
             blockSelf.imageView.image = resultImage;
             blockSelf.progressView.hidden = YES;
         }
     }];
+}
+
+#pragma mark sharing
+
+- (void)share:(UIBarButtonItem*)item
+{
+    BOOL isSimulator = NO;
+    #if (TARGET_IPHONE_SIMULATOR)
+        isSimulator = YES;
+    #endif
+    
+    NSArray *items = @[self.imageView.image];
+    NSArray *appActivities = isSimulator ? @[[[ISSaveImageToDesktopActivity alloc] initWithFileName:@"ImageSlicerResultImage.jpg"]] : nil;
+    
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:appActivities];
+    controller.excludedActivityTypes = @[UIActivityTypeAddToReadingList, UIActivityTypeAirDrop, UIActivityTypeAssignToContact];
+    if (isSimulator) {
+        controller.excludedActivityTypes = @[UIActivityTypeAddToReadingList, UIActivityTypeAirDrop, UIActivityTypeCopyToPasteboard, UIActivityTypeSaveToCameraRoll, UIActivityTypeAssignToContact];
+    }
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end
