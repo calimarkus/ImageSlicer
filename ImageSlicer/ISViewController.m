@@ -124,6 +124,7 @@
     // create new image & save
     __weak typeof(self) blockSelf = self;
     [self.imageSlicer imageFromSourceImages:self.sourceImages
+                            cumulativeWidth:NO
                                    progress:^(CGFloat progress) {
         // handle progress
         blockSelf.progressView.progress = progress;

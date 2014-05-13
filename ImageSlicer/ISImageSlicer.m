@@ -11,18 +11,19 @@
 @implementation ISImageSlicer
 
 - (void)imageFromSourceImages:(NSArray*)sourceImages
+              cumulativeWidth:(BOOL)cumulativeWidth
                      progress:(void(^)(CGFloat percentage))progress
                    completion:(void(^)(UIImage *resultImage))completion;
 {
     // basic validity checks
-    NSAssert(sourceImages.count > 1, @"No sourceImages given.");
-    NSAssert(self.pattern.count > 1, @"pattern needs to have two elements at least.");
+    NSAssert(sourceImages.count > 1, @" Two source images needed at least.");
+    NSAssert(self.pattern.count > 1, @"Pattern needs to have two elements at least.");
     NSAssert(self.stripeWidth > 0, @"stripeWidth cannot be less than 1.");
     
     // get size of big image
     UIImage *firstImage = sourceImages[0];
     CGSize size = firstImage.size;
-    size.width *= sourceImages.count;
+    if (cumulativeWidth) size.width *= sourceImages.count;
     
     // run in background
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{

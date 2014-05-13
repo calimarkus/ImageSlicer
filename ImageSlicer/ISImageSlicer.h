@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSArray *pattern;
 
 - (void)imageFromSourceImages:(NSArray*)sourceImages
+              cumulativeWidth:(BOOL)cumulativeWidth
                      progress:(void(^)(CGFloat percentage))progress
                    completion:(void(^)(UIImage *resultImage))completion;
 
