@@ -18,6 +18,7 @@
 @property (nonatomic,strong) UIImageView *imageView;
 @property (nonatomic,strong) UILabel *stepperValueLabel;
 
+@property (nonatomic, strong) NSArray *sourceImages;
 @property (nonatomic, strong) ISImageSlicer *imageSlicer;
 @end
 
@@ -28,6 +29,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"ImageSlicer";
+        
+        self.sourceImages = @[[UIImage imageNamed:@"01.jpg"],
+                              [UIImage imageNamed:@"02.jpg"],
+                              [UIImage imageNamed:@"03.jpg"],
+                              [UIImage imageNamed:@"04.jpg"]];
         
         self.imageSlicer = [[ISImageSlicer alloc] init];
         self.imageSlicer.stripeWidth = 3;
@@ -111,19 +117,14 @@
 
 - (void)redrawImage;
 {
-    // get source images
-    NSArray *images = @[[UIImage imageNamed:@"01.jpg"],
-                        [UIImage imageNamed:@"02.jpg"],
-                        [UIImage imageNamed:@"03.jpg"],
-                        [UIImage imageNamed:@"04.jpg"]];
-    
     // show progress
     self.progressView.hidden = NO;
     self.imageView.image = nil;
     
     // create new image & save
     __weak typeof(self) blockSelf = self;
-    [self.imageSlicer imageFromSourceImages:images progress:^(CGFloat progress) {
+    [self.imageSlicer imageFromSourceImages:self.sourceImages
+                                   progress:^(CGFloat progress) {
         // handle progress
         blockSelf.progressView.progress = progress;
     } completion:^(UIImage *resultImage){
